@@ -13,15 +13,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_sellers")
 public class Seller {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // informando ao bd que o id é auto incremento
 	private Long id;
 	private String name;
-	
+
 	@OneToMany(mappedBy = "seller") // relacionamento 1 para muitos
 	private List<Sale> sales = new ArrayList<>();
-	
+
 	public Seller() {}
 
 	public Seller(Long id, String name) {
