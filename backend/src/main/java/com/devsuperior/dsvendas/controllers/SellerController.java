@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.devsuperior.dsvendas.dto.SellerDTO;
 import com.devsuperior.dsvendas.service.SellerService;
 
-@RestController
-@RequestMapping(value = "/sellers")
+@RestController // controlador rest
+@RequestMapping(value = "/sellers") // rota
 public class SellerController {
 	@Autowired
 	private SellerService service;
@@ -20,6 +20,6 @@ public class SellerController {
 	@GetMapping
 	public ResponseEntity<List<SellerDTO>> findAll() {
 		List<SellerDTO> list = service.findAll();
-		return ResponseEntity.ok(list);
+		return ResponseEntity.ok(list); // ok = status 200
 	}
 }

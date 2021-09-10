@@ -19,7 +19,7 @@ public class Seller {
 	private Long id;
 	private String name;
 
-	@OneToMany(mappedBy = "seller") // relacionamento 1 para muitos
+	@OneToMany(mappedBy = "seller") // relacionamento 1 para n
 	private List<Sale> sales = new ArrayList<>();
 
 	public Seller() {}
@@ -41,7 +41,7 @@ public class Seller {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	// método de acesso - Sale
 	public List<Sale> getSales() {
 		return sales;
 	}
